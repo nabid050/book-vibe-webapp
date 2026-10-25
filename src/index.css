@@ -1,2 +1,149 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+:root {
+  font-family: Inter, "Segoe UI", sans-serif;
+  color: #1f2937;
+  background: #f5f5f5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f1f1f1;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.all-books-wrapper {
+  max-width: 1230px;
+  margin: 2rem auto 4rem;
+  padding: 0 1rem;
+}
+
+.all-books-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem 1.1rem;
+}
+
+.book-card {
+  background: #efefef;
+  border-radius: 0.7rem;
+  padding: 0.9rem 0.8rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  min-height: 330px;
+  box-shadow: 0 2px 0 rgba(15, 23, 42, 0.02);
+}
+
+.book-cover-box {
+  height: 200px;
+  border-radius: 0.65rem;
+  background: linear-gradient(180deg, #f3f3f3 0%, #e6e6e6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.book-cover {
+  width: 120px;
+  height: 170px;
+  object-fit: cover;
+  box-shadow: 0 10px 18px rgba(15, 23, 42, 0.18);
+  border-radius: 0.2rem;
+}
+
+.book-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+  margin-top: 0.9rem;
+}
+
+.book-tag {
+  background: rgba(255, 255, 255, 0.5);
+  color: #4b5563;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.book-details {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+
+.book-title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #141414;
+}
+
+.book-author {
+  margin: 0.28rem 0 0;
+  font-size: 0.7rem;
+  color: #5c6672;
+}
+
+.book-footer {
+  margin-top: auto;
+  padding-top: 0.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.7rem;
+}
+
+.book-category {
+  background: rgba(255, 255, 255, 0.55);
+  color: #475569;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  border-radius: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.book-rating {
+  color: #111827;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+}
+
+@media (max-width: 900px) {
+  .all-books-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .all-books-wrapper {
+    padding: 0 0.8rem;
+  }
+
+  .all-books-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .book-card {
+    min-height: 300px;
+  }
+}
